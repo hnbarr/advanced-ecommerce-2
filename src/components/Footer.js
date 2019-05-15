@@ -2,7 +2,8 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className="footer">
+      <div className="footer">
+        <div className="clear"> </div>
         <div className="section group">
           <div className="col_1_of_4 span_1_of_4">
             <h3>INFORMATION</h3>
@@ -45,7 +46,7 @@ function Footer() {
             <p>Design by <a href="#">W3layouts</a></p>
           </div>
         </div>
-    </div>  
+      </div>  
     );
 }
 
