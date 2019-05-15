@@ -13,7 +13,7 @@ const changeCategory = (category) => {
 
 function render() {
   ReactDOM.render(
-    <App state={state} currentCategory={currentCategory} />,
+    <App state={state} currentCategory={currentCategory} changeCategory={changeCategory}/>,
     document.getElementById("root")
   );
 }

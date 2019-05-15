@@ -20,7 +20,7 @@ function App(props) {
 			<div className="header">
 				<Header />
 				<SubHeader />
-				<TopNav />
+				<TopNav changeCategory={props.changeCategory}/>
 			</div>
 				
 			<ImageSlider />
