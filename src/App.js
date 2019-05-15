@@ -6,8 +6,14 @@ import ImageSlider from './components/ImageSlider'
 import ProductDetail from "./components/ProductDetail";
 import SubHeader from "./components/SubHeader";
 import TopNav from "./components/TopNav";
+import state from './state'
 
 function App(props) {
+	const filtered = state.products.filter(product => {
+		return product.category === props.currentCategory
+	})
+	console.log(filtered)
+
 	return (
 	  <div className="App">
 		<div className="wrap">
@@ -23,23 +29,14 @@ function App(props) {
 				<div className="products">
 					<h5><span>FEATURED</span> PRODUCTS</h5>
 					<div className="section group">
-						<ProductDetail price="$484.99" title='Standard Motor'/>
-						<ProductDetail price="$423.99" title='Not-So-Standard Motor'/>
-						<ProductDetail price="$320.72" title='Basically-A-Standard Motor'/>
-			 			<ProductDetail price="$257.16" title='Semi-Automatic Motor'/>
-						<ProductDetail price="$733.80" title='Fully-Automatic Motor'/>
+					  {
+						filtered.map((product, index) => {
+						  return (
+							<ProductDetail key={index} product={product}/>
+						  )
+						})
+					  }
 					</div>
-				</div>
-					
-				<div className="products products-secondbox">
-					<h5><span>Our</span> Specials</h5>
-				    <div className="section group">
-					  <ProductDetail price="$484.99" title='yo'/>
-					  <ProductDetail price="$733.80" title='yo'/>
-					  <ProductDetail price="$320.72" title='yo'/>
-			 		  <ProductDetail price="$257.16" title='yo'/>
-					  <ProductDetail price="$423.99" title='yo'/>
-				    </div>
 				</div>
 			  </div>
 			</div>
